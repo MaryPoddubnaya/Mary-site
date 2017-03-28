@@ -1,0 +1,138 @@
+.fullpage-wrapper {
+  min-height: 100%;
+}
+
+.section {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  padding-top: 80px;
+}
+
+/* About section */
+.about-section {
+  .services-col {
+    position: relative;
+    margin-bottom: 40px;
+
+    @media @screen-md-min {
+      margin-bottom: 0;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    .services-icon {
+      display: block;
+      margin: 0 auto;
+      width: 100%;
+      max-height: 100%;
+      margin-bottom: 20px;
+
+      img {
+        display: inline-block;
+        max-width: 132px;
+        max-height: 132px;
+      }
+    }
+  }
+
+  &.active {
+    .indents-wrap {
+      animation: slide 1.5s ease;
+    }
+
+    .services-icon img {
+      animation: zoom 2.5s;
+    }
+  }
+}
+
+/* Timeline-section */
+.timeline-section {
+  padding-top: 80px;
+  background: @light-grey;
+
+  &.active {
+    li {
+      .timeline-item {
+        transform: none;
+        visibility: visible;
+        opacity: 1;
+      }
+
+      &:nth-child(odd) {
+        .timeline-item {
+          right: 50px;
+
+          @media screen and @screen-sm-max {
+            right: -30px;
+          }
+
+          @media @screen-sm-min and @screen-lg-max{
+            right: -40px;
+          }
+
+          @media @screen-lg-min {
+            transform: translate3d(100px, 0, 0);
+          }
+        }
+      }
+
+      &:nth-child(even) {
+        .timeline-item {
+          left: -350px;
+
+          @media screen and @screen-sm-max {
+            right: 20px;
+            left: auto;
+            transform: translate3d(50px, 0, 0);
+          }
+
+          @media @screen-sm-min and @screen-lg-max{
+            left: -380px;
+            right: auto;
+          }
+
+          @media @screen-lg-min {
+            transform: translate3d(-100px, 0, 0);
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Portfolio-section */
+.portfolio-section {
+  padding-top: 0;
+}
+
+/* Testimonials section */
+.testimonials-section {
+  background: @light-grey;
+  padding-top: 0;
+
+  .icon-quotes {
+    display: inline-block;
+    width: 46px;
+    height: 46px;
+    background: url("../images/icon-quotes.png");
+  }
+}
+
+/* Contacts-section */
+.contacts-section {
+  .contact-us {
+    display: block;
+    font-size: 40px;
+    font-style: italic;
+    margin-bottom: 20px;
+
+    @media @screen-sm-max {
+      font-size: 32px;
+    }
+  }
+}
+
