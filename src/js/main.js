@@ -1,28 +1,53 @@
 $(document).ready(function () {
 
+    var myElement = document.querySelector("header");
+// construct an instance of Headroom, passing the element
+    var headroom  = new Headroom(myElement);
+// initialise
+    headroom.init();
+
     // hide-menu
     $('.nav-link').on('click', function (e) {
         e.preventDefault();
         $('.main-nav').toggleClass('hide-mobile');
     });
 
+
     //fullpage plugin
-    $("#fullpage").fullpage({
-        anchors:['firstPage', 'secondPage', 'thirdPage', 'fourthPage', '5Page', '6Page'],
-        menu: '#menu',
-        scrollingSpeed: 1000,
-        navigation: true,
-        navigationTooltips: ['firstPage', 'secondPage', 'thirdPage', 'fourthPage', '5Page', '6Page']
-    });
+    /* var doFullpage = document.documentElement.clientWidth;
+     if (doFullpage > 768) {*/
+        $('#fullpage').fullpage({
+            anchors: ['intro', 'about', 'timeline', 'portfolio', 'testimonials', 'contacts'],
+            verticalCentered: true,
+            scrollOverflow: true,
+            paddingBottom: '0',
+            scrollingSpeed: '800',
+            navigation: true,
+            navigationPosition: 'right',
+            resize: false,
+            css3: true,
+            afterLoad: function (anchorLink, index) {
+
+                //section 2
+                if (index == 2) {
+                    //moving the image
+                    $('.about-section').find('.flex-item:nth-child(1)').delay(500).animate({
+                        left: '0'
+                    }, 1500, 'easeOutExpo');
+                    $('.about-section').find('.flex-item:nth-child(3)').delay(500).animate({
+                        right: '0'
+                    }, 1500, 'easeOutExpo');
+
+                }
+            }
+        });
+   /* }*/
+
 
     //textillate plugin
     $('.animate-heading').textillate({
         in: { effect: 'bounce' }
     });
-
-
-
-
 
     $('.animate-heading').on('inAnimationEnd.tlt', function () {
         $('.hidden-animation').addClass('animate-subheading');
@@ -36,15 +61,6 @@ $(document).ready(function () {
             }
         });
     });
-
-
-    //bxslider plugin
-    $('.slider1').bxSlider({
-        slideWidth: 400,
-        minSlides: 2,
-        maxSlides: 3
-    });
-
 
     //three.js
     var mouseX = 0, mouseY = 0,

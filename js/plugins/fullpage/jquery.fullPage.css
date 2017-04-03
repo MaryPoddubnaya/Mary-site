@@ -1,5 +1,5 @@
-/*!
- * fullPage 2.9.4
+/**
+ * fullPage 2.6.4
  * https://github.com/alvarotrigo/fullPage.js
  * MIT licensed
  *
@@ -61,10 +61,6 @@ html.fp-enabled,
     position: relative;
 }
 .fp-controlArrow {
-    -webkit-user-select: none; /* webkit (safari, chrome) browsers */
-    -moz-user-select: none; /* mozilla browsers */
-    -khtml-user-select: none; /* webkit (konqueror) browsers */
-    -ms-user-select: none; /* IE10+ */
     position: absolute;
     z-index: 4;
     top: 50%;
@@ -89,14 +85,7 @@ html.fp-enabled,
     border-color: transparent transparent transparent #fff;
 }
 .fp-scrollable {
-    overflow: hidden;
-    position: relative;
-}
-.fp-scroller{
-    overflow: hidden;
-}
-.iScrollIndicator{
-    border: 0 !important;
+    overflow: scroll;
 }
 .fp-notransition {
     -webkit-transition: none !important;
@@ -121,9 +110,6 @@ html.fp-enabled,
     z-index: 4;
     left: 50%;
     opacity: 1;
-    -webkit-transform: translate3d(0,0,0);
-    -ms-transform: translate3d(0,0,0);
-    transform: translate3d(0,0,0);
 }
 .fp-slidesNav.bottom {
     bottom: 17px;
@@ -201,7 +187,6 @@ html.fp-enabled,
     display: block;
     opacity: 0;
     width: 0;
-    cursor: pointer;
 }
 #fp-nav ul li:hover .fp-tooltip,
 #fp-nav.fp-show-active a.active + .fp-tooltip {
@@ -215,15 +200,4 @@ html.fp-enabled,
 }
 #fp-nav ul li .fp-tooltip.left {
     left: 20px;
-}
-.fp-auto-height.fp-section,
-.fp-auto-height .fp-slide,
-.fp-auto-height .fp-tableCell{
-    height: auto !important;
-}
-
-.fp-responsive .fp-auto-height-responsive.fp-section,
-.fp-responsive .fp-auto-height-responsive .fp-slide,
-.fp-responsive .fp-auto-height-responsive .fp-tableCell {
-    height: auto !important;
 }

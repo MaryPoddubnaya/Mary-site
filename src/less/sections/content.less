@@ -1,29 +1,79 @@
-.fullpage-wrapper {
+.fullpage-box {
   min-height: 100%;
+  position: relative;
+
+  #fp-nav {
+    @media @screen-md-max {
+      display: none;
+    }
+  }
 }
 
 .section {
   overflow: hidden;
   position: relative;
-  width: 100%;
   padding-top: 80px;
+
+  @media @screen-sm-max {
+    padding-top: 60px;
+  }
+}
+
+/* Intro section */
+.intro-section {
+  padding-top: 0;
+  .title-block {
+  }
 }
 
 /* About section */
 .about-section {
-  .services-col {
+  background: white;
+
+  @media @screen-md-min {
+    background: transparent;
+  }
+  .container {
+    @media @screen-md-max {
+      padding: 0;
+    }
+  }
+
+  .flex-container {// add inner class!
+    justify-content: space-around;
+    text-align: center;
+  }
+
+  .info-block {
     position: relative;
-    margin-bottom: 40px;
+    width: auto;
+    margin-bottom: 0;
+    padding: 30px;
+    background: #fff;
+
+    @media @screen-md-min {
+      width: 33.3333333%;
+      padding: 50px;
+      margin-bottom: 60px;
+    }
 
     @media @screen-md-min {
       margin-bottom: 0;
+    }
+
+    &:nth-child(1) {
+        left: -130%;
+    }
+
+    &:nth-child(3) {
+        right: -130%;
     }
 
     &:last-child {
       margin-right: 0;
     }
 
-    .services-icon {
+    .info-block-icon {
       display: block;
       margin: 0 auto;
       width: 100%;
@@ -37,21 +87,10 @@
       }
     }
   }
-
-  &.active {
-    .indents-wrap {
-      animation: slide 1.5s ease;
-    }
-
-    .services-icon img {
-      animation: zoom 2.5s;
-    }
-  }
 }
 
 /* Timeline-section */
 .timeline-section {
-  padding-top: 80px;
   background: @light-grey;
 
   &.active {
@@ -104,15 +143,9 @@
   }
 }
 
-/* Portfolio-section */
-.portfolio-section {
-  padding-top: 0;
-}
-
 /* Testimonials section */
 .testimonials-section {
   background: @light-grey;
-  padding-top: 0;
 
   .icon-quotes {
     display: inline-block;
