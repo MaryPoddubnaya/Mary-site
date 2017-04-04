@@ -1,10 +1,12 @@
 .fullpage-box {
   min-height: 100%;
   position: relative;
+}
 
-  #fp-nav {
+#fp-nav {
+  &.right {
     @media @screen-md-max {
-      display: none;
+      display: none !important;
     }
   }
 }
@@ -14,17 +16,46 @@
   position: relative;
   padding-top: 80px;
 
+  @media @screen-480-max {
+    padding: 0;
+  }
+
+/*  @media @screen-480-max {
+    padding-bottom: 60px;
+    min-height: 700px;
+    display: table;
+  }*/
+
+/*  .section-box {
+    @media @screen-480-max {
+      display: table-cell;
+      vertical-align: middle;
+    }
+  }
+
   @media @screen-sm-max {
     padding-top: 60px;
-  }
+  }*/
 }
 
 /* Intro section */
 .intro-section {
   padding-top: 0;
-  .title-block {
+
+/*  @media @screen-480-max {
+    display: table;
+    height: 100%;
+    width: 100%;
+    vertical-align: middle;
+  }*/
+
+/*  .intro-holder {
+    @media @screen-480-max {
+      padding: 200px 20px 250px;
+      display: table-cell;
+    }*/
   }
-}
+
 
 /* About section */
 .about-section {
@@ -46,31 +77,26 @@
 
   .info-block {
     position: relative;
-    width: auto;
     margin-bottom: 0;
     padding: 30px;
+    width: 100%;
     background: #fff;
+
+    &:nth-child(1),
+    &:nth-child(3){
+       opacity: 0;
+    }
+
+
+    &:last-child {
+      margin-right: 0;
+    }
+
 
     @media @screen-md-min {
       width: 33.3333333%;
       padding: 50px;
-      margin-bottom: 60px;
-    }
-
-    @media @screen-md-min {
       margin-bottom: 0;
-    }
-
-    &:nth-child(1) {
-        left: -130%;
-    }
-
-    &:nth-child(3) {
-        right: -130%;
-    }
-
-    &:last-child {
-      margin-right: 0;
     }
 
     .info-block-icon {
@@ -85,6 +111,24 @@
         max-width: 132px;
         max-height: 132px;
       }
+    }
+  }
+
+  &.active {
+    .info-block {
+      &:nth-child(1),
+      &:nth-child(3){
+        opacity: 1;
+        .transition(@delay: 1.2s);
+      }
+    }
+
+    transform: scaleX(-1);
+    .transition(@delay: 1.8s);
+
+    .flex-container {
+      transform: translateX(130%);
+      .transition(@delay: 2.6s);
     }
   }
 }
@@ -130,7 +174,7 @@
           }
 
           @media @screen-sm-min and @screen-lg-max{
-            left: -380px;
+            left: -360px;
             right: auto;
           }
 
@@ -139,6 +183,16 @@
           }
         }
       }
+    }
+  }
+}
+
+.portfolio-section {
+  padding: 0;
+
+  .slider {
+    @media @screen-480-max {
+      min-height: 700px;
     }
   }
 }

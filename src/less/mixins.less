@@ -5,31 +5,24 @@
   transition-delay: @delay;
 }
 
-@keyframes slide {
-  0%  {
-    transform: scale(1, 1) translateY(600%);
-  }
-
-  50% {
-    transform: scale(1, 1) translateY(600%);
-  }
-
-  100% {
-    transform: scale(1, 1) translateY(0);
-  }
+.animationF (@name: Skew; @duration: 2s; @delay: 3s; @timing-function: ease-in-out; @count: 1) {
+  animation-name: @name;
+  animation-duration: @duration;
+  animation-delay: @delay;
+  animation-timing-function: @timing-function;
+  animation-iteration-count: @count;
 }
 
-@keyframes zoom {
-  0%  {
-    transform: scale(0.5, 0.5);
+@keyframes Skew {
+  0% {
+    transform: scaleX(-0.8);
   }
-
-  50%  {
-    transform: scale(.8, .8);
+  50% {
+    transform: scaleX(-0.8) translateX(130%);
   }
 
   100% {
-    transform: scale(1, 1);
+    transform: translateX(130%);
   }
 }
 

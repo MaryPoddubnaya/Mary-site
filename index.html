@@ -19,7 +19,6 @@
     <link href="js/plugins/textillate/animate.css" rel="stylesheet">
     <script src="js/plugins/textillate/jquery.textillate.js"></script>
     <script src="js/plugins/textillate/jquery.lettering.js"></script>
-    <script src="js/plugins/headroom/jquery.headroom.min.js"></script>
 
 
     <link href="js/plugins/fullpage/jquery.fullPage.css" rel="stylesheet">
@@ -34,12 +33,13 @@
     <script src="js/plugins/stats.min.js"></script>
 
     <script src="js/main.min.js"></script>
+    <script src="js/three.js"></script>
 
     <link href="css/main.min.css" rel="stylesheet">
 </head>
 <body>
 
-<header class="header headroom" id=header">
+<header class="header" id=header">
     <div class="container clearfix">
         <a href="#" class="nav-link">
             <svg class="icon-menu" role="img" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 35 34" style="enable-background:new 0 0 35 34;" xml:space="preserve">
@@ -62,7 +62,7 @@
 <div class="fullpage-box">
     <div id="fullpage">
         <div class="section intro-section" id="section-1">
-            <div class="container">
+            <div class="intro-holder">
                 <div class="title-block text-center">
                     <h1 class="main-title animate-heading">Mary's test site</h1>
                     <!--<p class="hidden-animation">Mary tried very hard</p>-->
@@ -71,22 +71,21 @@
         </div>
 
         <section class="section about-section" id="section-2">
-            <div class="container">
+            <div class="container section-box">
                 <div class="flex-container ">
                     <div class="flex-item info-block">
                         <div class="flex-item-block">
                             <i class="info-block-icon"><img src="images/cat1.png"></i>
                             <h3 class="sub-caption">sociis natoque magnis.</h3>
-                            <p>Consectetuer adipiscing elit nean commodo ligula eget dolor eneanero massa cum sociis
-                                natoque vel penatibus magnis montes.</p>
+                            <p>Consectetuer adipiscing elit nean commodo ligula eget dolor.</p>
                         </div>
                     </div>
                     <div class="flex-item info-block">
                         <div class="flex-item-block">
                             <i class="info-block-icon"><img src="images/cat2.png"></i>
                             <h3 class="sub-caption">sociis natoque magnis.</h3>
-                            <p>Consectetuer adipiscing elit nean commodo ligula eget dolor eneanero massa cum sociis
-                                natoque vel penatibus magnis montes.</p>
+                            <p>Consectetuer adipiscing elit nean commodo ligula eneanero massa cum sociis
+                                natoque vel penatibus.</p>
                         </div>
                     </div>
                     <div class="flex-item info-block">
@@ -94,7 +93,7 @@
                             <i class="info-block-icon"><img src="images/cat3.png"></i>
                             <h3 class="sub-caption">sociis natoque magnis.</h3>
                             <p>Consectetuer adipiscing elit nean commodo ligula eget dolor eneanero massa cum sociis
-                                natoque vel penatibus magnis montes.</p>
+                                natoque vel.</p>
                         </div>
                     </div>
                 </div>
@@ -102,7 +101,7 @@
         </section>
 
         <section class="section timeline-section fp-noscroll" id="section-3">
-            <div class="container">
+            <div class="container section-box">
                 <div class="title-block text-center">
                     <h2 class="section-title">Title</h2>
                     <p>
@@ -117,25 +116,25 @@
                         <li>
                             <div class="timeline-item bordered-block">
                                 <h3 class="sub-caption">Mauris vitae arcu in nibh faucibus vitae elit</h3>
-                                <p>Nascetur ridiculus mus donec quam felis ultricies nec pellentesque pretium quis.</p>
+                                <p>Nascetur ridiculus mus donec quam felis ultricies nec.</p>
                             </div>
                         </li>
                         <li>
                             <div class="timeline-item bordered-block">
                                 <h3 class="sub-caption">Mauris vitae arcu in nibh faucibus vitae elit</h3>
-                                <p>Nascetur ridiculus mus donec quam felis ultricies nec pellentesque pretium quis.</p>
+                                <p>Nascetur ridiculus mus donec.</p>
                             </div>
                         </li>
                         <li>
                             <div class="timeline-item bordered-block">
                                 <h3 class="sub-caption">Mauris vitae arcu in nibh faucibus vitae elit</h3>
-                                <p>Nascetur ridiculus mus donec quam felis ultricies nec pellentesque pretium quis.</p>
+                                <p>Nascetur ridiculus mus donec quam felis ultricies nec.</p>
                             </div>
                         </li>
                         <li>
                             <div class="timeline-item bordered-block">
                                 <h3 class="sub-caption">Mauris vitae arcu in nibh faucibus vitae elit</h3>
-                                <p>Nascetur ridiculus mus donec quam felis ultricies nec pellentesque pretium quis.</p>
+                                <p>Nascetur ridiculus mus donec quam felis ultricies nec pellentesque quis.</p>
                             </div>
                         </li>
                     </ul>
@@ -164,7 +163,7 @@
         </section>
 
         <section class="section testimonials-section" id="section-5">
-            <div class="container">
+            <div class="container section-box">
                 <div class="title-block text-center">
                     <h2 class="section-title">Testimonials</h2>
                 </div>
@@ -210,7 +209,7 @@
         </section>
 
         <section class="section contacts-section" id="section-6">
-            <div class="container">
+            <div class="container section-box">
                 <div class="contact-block text-center">
                     <img src="images/contact-icon.png">
                     <h2 class="section-title">Ready to talk business?</h2>
