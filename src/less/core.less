@@ -41,36 +41,11 @@ a:visited {
   }
 }
 
-.triangle-arrow {
-  width: 100%;
-  height: 20px;
-  position: relative;
-}
-
-.bordered-block {
-  position: relative;
-  padding: 40px 20px;
-  border: 1px solid @grey;
-
-  &:after {
-    content: "";
-    position: absolute;
-    width: 9px;
-    height: 9px;
-    top: 0;
-    left: 50%;
-    background: @light-grey;
-    transform: rotate(45deg) translateX(-50%);
-    box-shadow: -1px -1px 0px 0px @grey;
-  }
-
-  @media @screen-480-max {
-    padding: 20px 10px;
-  }
-}
-
 /* styles for captions*/
 .main-title {
+  font-family: @font-family-title;
+  color: white;
+  text-shadow: 5px -1px 4px #333;
   font-size: 100px;
   text-transform: uppercase;
   line-height: 1.4;
@@ -84,20 +59,8 @@ a:visited {
   }
 }
 
-.hidden-animation {
-  display: none;
-
-  &.animate-subheading {
-    display: block;
-    font-size: @font-size-h2-small;
-
-    @media @screen-ms-max {
-      font-size: 24px;
-    }
-  }
-}
-
 .section-title {
+  font-family: @font-family-title;
   color: @title-color;
   font-size: @font-size-h2-small;
   margin-bottom: 40px;
@@ -110,34 +73,67 @@ a:visited {
 }
 
 .sub-caption {
-  font-size: @font-size-h3;
+  font-family: @font-family-title;
+  font-size: @font-size-medium;
   line-height: @line-height-base;
   color: @title-color;
   margin-top: 10px;
   text-transform: uppercase;
 }
 
+.bordered-block {
+  position: relative;
+  padding: 40px 20px;
+  border: 1px solid #e3e3e3;
+  border-radius: 3px;
+  background: white;
+  .boxShadow();
+
+  &:before {
+    content: "";
+    position: absolute;
+    width: 9px;
+    height: 9px;
+    top: 0;
+    left: 50%;
+    background: white;
+    transform: rotate(45deg) translateX(-50%);
+    box-shadow: -1px -1px 1px -1px #797979;
+  }
+
+  @media @screen-480-max {
+    padding: 20px 10px;
+  }
+}
+
 /* Flex-block */
 .flex-container {
-  display: block;
-  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+  vertical-align: top;
 
-  @media screen and @screen-md-min {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: space-between;
+  @media @screen-md-max{
+    display: block;
+    width: 100%;
   }
 
   .flex-item {
-    display: block;
-    width: 100%;
-    margin-bottom: 50px;
+    display: inline-flex;
+    width: 27%;
+    align-content: flex-start;
 
-    @media screen and @screen-md-min {
-      display: inline-flex;
-      width: 27%;
+
+    @media @screen-md-max {
+      display: block;
+      width: 100%;
+      margin-bottom: 50px;
     }
+  }
+
+  .flex-item-block {
+    width: 100%;
   }
 }
 
@@ -151,7 +147,7 @@ a:visited {
     width: 2px;
     margin: 0 auto;
     padding-top: 50px;
-    background: @grey;
+    background: #e3e3e3;
 
     @media screen and @screen-sm-max {
       margin-left: 20px;
@@ -166,8 +162,8 @@ a:visited {
       width: 25px;
       height: 25px;
       border-radius: 50%;
-      background: @light-grey;
-      border: 2px solid @grey;
+      background: white;
+      border: 2px solid #e3e3e3;
     }
 
     .timeline-item {
@@ -180,7 +176,7 @@ a:visited {
       .transition(@delay: .7s; @duration: .7s);
 
       @media screen and @screen-sm-max {
-        width: ~'calc(100vw - 150px)';
+        width: ~'calc(100vw - 110px)';
       }
 
       @media screen and @screen-sm-min {
@@ -194,7 +190,7 @@ a:visited {
 
     &:nth-child(even) {
       .bordered-block {
-        &:after {
+        &:before {
           top: 50%;
           right: 0;
           left: auto;
@@ -204,7 +200,7 @@ a:visited {
 
       @media @screen-sm-max {
         .bordered-block {
-          &:after {
+          &:before {
             top: 50%;
             left: 0;
             right: auto;
@@ -216,7 +212,7 @@ a:visited {
 
     &:nth-child(odd) {
       .bordered-block {
-        &:after {
+        &:before {
           top: 50%;
           left: 0;
           right: auto;
@@ -241,83 +237,22 @@ a:visited {
   }
 }
 
-/* Canvas */
-.animation {
+/* Background */
+.bg-holder {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  height: 100vh;
-  z-index: -1;
-
-  canvas {
-    width: 100% !important;
-    min-height: 100%;
-  }
-}
-
-/* Photo-slider animation*/
-.slider {
-  width: 100%;
+  bottom: 0;
   height: 100%;
-  min-height: 100%;
-  position: relative;
-}
+  background:url("../images/bg-sky.jpg");
 
-.slider-item{
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  transform-origin: bottom center;
-
-  div {
+  &:before {
+    content: '';
     position: absolute;
     width: 100%;
     height: 100%;
-  }
-
-  &:nth-of-type(1) {
-    .animation-slider-section();
-
-    div {
-      background: url("../images/cosmos-1.jpg") center center;
-      background-size: cover;
-    }
-  }
-
-  &:nth-of-type(2) {
-    .animation-slider-section(@name: slideRight; @delay: 12s);
-
-    div {
-      background: url("../images/cosmos-2.jpg") center center;
-      background-size: cover;
-    }
-  }
-
-  &:nth-of-type(3) {
-    .animation-slider-section(@name: slideLeft; @delay: 8s);
-
-    div {
-      background: url("../images/cosmos-3.jpg") center center;
-      background-size: cover;
-    }
-  }
-
-  &:nth-of-type(4) {
-    .animation-slider-section(@name: slideBottom; @delay: 4s);
-
-    div {
-      background: url("../images/cosmos-4.jpg") center center;
-      background-size: cover;
-    }
-  }
-
-  &:nth-of-type(5) {
-    .animation-slider-section(@name: slideBottom; @delay: 0s);
-
-    div {
-      background: url("../images/cosmos-5.jpg") center center;
-      background-size: cover;
-    }
+    background: rgba(255, 255, 255, .5);
   }
 }
+

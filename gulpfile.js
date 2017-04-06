@@ -3,6 +3,7 @@ var postcss = require('gulp-postcss');
 var autoprefixer = require('autoprefixer');
 var cleancss = require('gulp-clean-css');
 var less = require('gulp-less');
+var minify = require('gulp-minify');
 
 var rename = require('gulp-rename');
 var concat = require('gulp-concat');
@@ -33,13 +34,10 @@ gulp.task('watch', function() {
     gulp.watch('src/js/*.js', ['compress-js']);
 });
 
-gulp.task('compress-js', function(){
-    return gulp.src('src/js/*.js')
-        .pipe(concat('main.js'))
-        .pipe(gulp.dest('js'))
-        .pipe(rename('main.min.js'))
-        .pipe(uglify())
-        .pipe(gulp.dest('js'));
+gulp.task('compress-js', function() {
+    gulp.src('src/js/*.js')
+        .pipe(minify({noSource: true}))
+        .pipe(gulp.dest('js/'))
 });
 
 gulp.task('default', ['less', 'compress-js', 'watch' ], function() {

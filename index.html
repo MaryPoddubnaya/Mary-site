@@ -9,31 +9,26 @@
     <meta name="keywords" content="keywords">
     <meta name="description" content="description">
 
-    <link href="//fonts.googleapis.com/css?family=Open+Sans:300,400|Titillium+Web:400" rel="stylesheet">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Fredericka+the+Great" rel="stylesheet">
 
     <!-- Libs -->
     <script src="libs/jquery/jquery.min.js"></script>
     <link href="libs/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!--Plugins -->
-    <link href="js/plugins/textillate/animate.css" rel="stylesheet">
-    <script src="js/plugins/textillate/jquery.textillate.js"></script>
-    <script src="js/plugins/textillate/jquery.lettering.js"></script>
+    <link href="libs/plugins/textillate/animate.css" rel="stylesheet">
+    <script src="libs/plugins/textillate/jquery.textillate.js"></script>
+    <script src="libs/plugins/textillate/jquery.lettering.js"></script>
 
 
-    <link href="js/plugins/fullpage/jquery.fullPage.css" rel="stylesheet">
-    <script src="js/plugins/fullpage/vendors/jquery.easings.min.js"></script>
-    <script src="js/plugins/fullpage/vendors/jquery.slimscroll.js"></script>
-    <script src="js/plugins/fullpage/jquery.fullPage.js"></script>
+    <link href="libs/plugins/fullpage/jquery.fullPage.css" rel="stylesheet">
+    <script src="libs/plugins/fullpage/vendors/jquery.easings.min.js"></script>
+    <script src="libs/plugins/fullpage/vendors/jquery.slimscroll.js"></script>
+    <script src="libs/plugins/fullpage/jquery.fullPage.js"></script>
 
-    <!-- Three.js -->
-    <script src="js/plugins/three.min.js"></script>
-    <script src="js/plugins/Projector.js"></script>
-    <script src="js/plugins/CanvasRenderer.js"></script>
-    <script src="js/plugins/stats.min.js"></script>
-
-    <script src="js/main.min.js"></script>
-    <script src="js/three.js"></script>
+    <script src="js/main-min.js"></script>
 
     <link href="css/main.min.css" rel="stylesheet">
 </head>
@@ -42,7 +37,7 @@
 <header class="header" id=header">
     <div class="container clearfix">
         <a href="#" class="nav-link">
-            <svg class="icon-menu" role="img" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 35 34" style="enable-background:new 0 0 35 34;" xml:space="preserve">
+            <svg class="icon-menu" role="img" version="1.1" id="icon-1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 35 34" style="enable-background:new 0 0 35 34;" xml:space="preserve">
 <path d="M9,25h17v-2H9V25z M26,9H9v2h17V9z M26,16H9v2h17V16z"></path>
 </svg>
         </a>
@@ -52,45 +47,46 @@
             </li>
             <li data-menuanchor="about"><a href="#about" class="link-blue"><u>About</u></a></li>
             <li data-menuanchor="thirdPage"><a href="#timeline" class="link-blue"><u>Title</u></a></li>
-            <li data-menuanchor="fourthPage"><a href="#portfolio" class="link-blue"><u>Portfolio</u></a></li>
             <li data-menuanchor="5Page"><a href="#testimonials" class="link-blue"><u>Testimonials</u></a></li>
             <li data-menuanchor="6Page"><a href="#contacts" class="link-blue"><u>Contacts</u></a></li>
         </ul>
     </div>
 </header>
 
-<div class="fullpage-box">
+<div class="fullpage-box" id="fullpage-box">
     <div id="fullpage">
         <div class="section intro-section" id="section-1">
-            <div class="intro-holder">
-                <div class="title-block text-center">
-                    <h1 class="main-title animate-heading">Mary's test site</h1>
-                    <!--<p class="hidden-animation">Mary tried very hard</p>-->
-                </div>
-            </div>
+           <div class="intro-section-block">
+               <div class="container intro-holder">
+                   <div class="title-block text-center">
+                       <h1 class="main-title animate-heading">Mary's test site</h1>
+                   </div>
+               </div>
+           </div>
         </div>
 
         <section class="section about-section" id="section-2">
-            <div class="container section-box">
-                <div class="flex-container ">
+            <div class="container">
+                <div class="flex-container animation-block text-center">
                     <div class="flex-item info-block">
                         <div class="flex-item-block">
-                            <i class="info-block-icon"><img src="images/cat1.png"></i>
+
                             <h3 class="sub-caption">sociis natoque magnis.</h3>
                             <p>Consectetuer adipiscing elit nean commodo ligula eget dolor.</p>
                         </div>
                     </div>
                     <div class="flex-item info-block">
                         <div class="flex-item-block">
-                            <i class="info-block-icon"><img src="images/cat2.png"></i>
+
                             <h3 class="sub-caption">sociis natoque magnis.</h3>
-                            <p>Consectetuer adipiscing elit nean commodo ligula eneanero massa cum sociis
-                                natoque vel penatibus.</p>
+                            <p>Uno is a one page psd & html5/css3 website template, designed with love and attention to details by
+                                pixelhint.com, uno is free to use for personal of your client’s projects
+                                thanks for downloading the uno one page template.</p>
                         </div>
                     </div>
                     <div class="flex-item info-block">
                         <div class="flex-item-block">
-                            <i class="info-block-icon"><img src="images/cat3.png"></i>
+
                             <h3 class="sub-caption">sociis natoque magnis.</h3>
                             <p>Consectetuer adipiscing elit nean commodo ligula eget dolor eneanero massa cum sociis
                                 natoque vel.</p>
@@ -100,8 +96,8 @@
             </div>
         </section>
 
-        <section class="section timeline-section fp-noscroll" id="section-3">
-            <div class="container section-box">
+        <section class="section timeline-section top-indent" id="section-3">
+            <div class="container">
                 <div class="title-block text-center">
                     <h2 class="section-title">Title</h2>
                     <p>
@@ -142,28 +138,8 @@
             </div>
         </section>
 
-        <section class="section portfolio-section" id="section-4">
-            <div class="slider">
-                <div class="slider-item">
-                    <div></div>
-                </div>
-                <div class="slider-item">
-                    <div></div>
-                </div>
-                <div class="slider-item">
-                    <div></div>
-                </div>
-                <div class="slider-item">
-                    <div></div>
-                </div>
-                <div class="slider-item">
-                    <div></div>
-                </div>
-            </div>
-        </section>
-
-        <section class="section testimonials-section" id="section-5">
-            <div class="container section-box">
+        <section class="section testimonials-section top-indent" id="section-4">
+            <div class="container">
                 <div class="title-block text-center">
                     <h2 class="section-title">Testimonials</h2>
                 </div>
@@ -172,7 +148,6 @@
                         <div class="flex-item-block">
                             <i class="icon-quotes"></i>
                             <h4 class="sub-caption">Alex doe</h4>
-                            <div class="triangle-arrow"></div>
                             <div class="bordered-block">
                                 <p>Mauris sollicitudin velit nisl, sed mollis lorem commodo non. Aenean in mattis Proin a
                                     vehicula eros Etiam malesuada odio nec tempor sollicitudin Integer convallis adipiscing
@@ -184,7 +159,6 @@
                         <div class="flex-item-block">
                             <i class="icon-quotes"></i>
                             <h4 class="sub-caption">Samantha doe</h4>
-                            <div class="triangle-arrow"></div>
                             <div class="bordered-block">
                                 <p>Mauris sollicitudin velit nisl, sed mollis lorem commodo non. Aenean in mattis Proin a
                                     vehicula eros Etiam malesuada odio nec tempor sollicitudin Integer convallis adipiscing
@@ -196,7 +170,6 @@
                         <div class="flex-item-block">
                             <i class="icon-quotes"></i>
                             <h4 class="sub-caption">Olivia doe</h4>
-                            <div class="triangle-arrow"></div>
                             <div class="bordered-block">
                                 <p>Mauris sollicitudin velit nisl, sed mollis lorem commodo non. Aenean in mattis Proin a
                                     vehicula eros Etiam malesuada odio nec tempor sollicitudin Integer convallis adipiscing
@@ -209,7 +182,7 @@
         </section>
 
         <section class="section contacts-section" id="section-6">
-            <div class="container section-box">
+            <div class="container">
                 <div class="contact-block text-center">
                     <img src="images/contact-icon.png">
                     <h2 class="section-title">Ready to talk business?</h2>

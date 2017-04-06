@@ -4,6 +4,16 @@
 }
 
 #fp-nav {
+  ul {
+    li {
+      a {
+        span {
+          background: white;
+        }
+      }
+    }
+  }
+
   &.right {
     @media @screen-md-max {
       display: none !important;
@@ -14,89 +24,84 @@
 .section {
   overflow: hidden;
   position: relative;
-  padding-top: 80px;
 
-  @media @screen-480-max {
-    padding: 0;
+  &.top-indent {
+    padding-top: 80px !important;
+
+    @media @screen-sm-max {
+      padding-top: 60px !important;
+      padding-bottom: 60px;
+    }
   }
+}
 
-/*  @media @screen-480-max {
-    padding-bottom: 60px;
-    min-height: 700px;
-    display: table;
-  }*/
+/* Intro-section */
+.intro-section {
+  .intro-section-block {
+    @media @screen-sm-max {
+      width: 100%;
+      height: 100%;
+      display: table;
+      padding-bottom: 50px;
+    }
 
-/*  .section-box {
-    @media @screen-480-max {
-      display: table-cell;
-      vertical-align: middle;
+    @media only screen and @screen-ms-max and (orientation: landscape) {
+      max-height: 500px;
     }
   }
 
-  @media @screen-sm-max {
-    padding-top: 60px;
-  }*/
-}
-
-/* Intro section */
-.intro-section {
-  padding-top: 0;
-
-/*  @media @screen-480-max {
-    display: table;
-    height: 100%;
-    width: 100%;
-    vertical-align: middle;
-  }*/
-
-/*  .intro-holder {
-    @media @screen-480-max {
-      padding: 200px 20px 250px;
+  .intro-holder {
+    @media @screen-xs-max {
       display: table-cell;
-    }*/
-  }
+      padding-top: 200px;
+      padding-bottom: 200px;
+    }
 
+    @media only screen and @screen-ms-max and (orientation: landscape) {
+      padding-top: 150px;
+      padding-bottom: 100px;
+    }
+  }
+}
 
 /* About section */
 .about-section {
-  background: white;
-
-  @media @screen-md-min {
-    background: transparent;
+  @media @screen-xs-max {
+    padding-bottom: 60px;
   }
+
   .container {
     @media @screen-md-max {
       padding: 0;
     }
   }
 
-  .flex-container {// add inner class!
+  .animation-block {
     justify-content: space-around;
-    text-align: center;
   }
 
   .info-block {
     position: relative;
     margin-bottom: 0;
     padding: 30px;
+    border: none;
+    background: rgba(255, 255, 255, .7);
     width: 100%;
-    background: #fff;
 
-    &:nth-child(1),
-    &:nth-child(3){
-       opacity: 0;
+    @media only screen and (min-width: 1025px) and (orientation: landscape) {
+      display: inline-flex;
+      width: 27%;
     }
-
 
     &:last-child {
       margin-right: 0;
     }
 
-
-    @media @screen-md-min {
-      width: 33.3333333%;
-      padding: 50px;
-      margin-bottom: 0;
+    &:nth-child(1),
+    &:nth-child(3) {
+      @media @screen-xs-max {
+        opacity: 0;
+      }
     }
 
     .info-block-icon {
@@ -112,31 +117,16 @@
         max-height: 132px;
       }
     }
-  }
 
-  &.active {
-    .info-block {
-      &:nth-child(1),
-      &:nth-child(3){
-        opacity: 1;
-        .transition(@delay: 1.2s);
-      }
-    }
-
-    transform: scaleX(-1);
-    .transition(@delay: 1.8s);
-
-    .flex-container {
-      transform: translateX(130%);
-      .transition(@delay: 2.6s);
+    &.scale-box {
+      transform: rotateY(360deg);
+      .transition(@delay: 2s);
     }
   }
 }
 
 /* Timeline-section */
 .timeline-section {
-  background: @light-grey;
-
   &.active {
     li {
       .timeline-item {
@@ -153,7 +143,7 @@
             right: -30px;
           }
 
-          @media @screen-sm-min and @screen-lg-max{
+          @media @screen-sm-min and @screen-lg-max {
             right: -40px;
           }
 
@@ -173,7 +163,7 @@
             transform: translate3d(50px, 0, 0);
           }
 
-          @media @screen-sm-min and @screen-lg-max{
+          @media @screen-sm-min and @screen-lg-max {
             left: -360px;
             right: auto;
           }
@@ -187,19 +177,11 @@
   }
 }
 
-.portfolio-section {
-  padding: 0;
-
-  .slider {
-    @media @screen-480-max {
-      min-height: 700px;
-    }
-  }
-}
-
 /* Testimonials section */
 .testimonials-section {
-  background: @light-grey;
+  .sub-caption {
+    margin-bottom: 30px;
+  }
 
   .icon-quotes {
     display: inline-block;
@@ -211,6 +193,19 @@
 
 /* Contacts-section */
 .contacts-section {
+  @media (max-width: 520px) {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+
+  .section-title {
+    font-size: @font-size-h2;
+
+    @media @screen-sm-max {
+      font-size: @font-size-h2-small;
+    }
+  }
+
   .contact-us {
     display: block;
     font-size: 40px;
@@ -218,7 +213,7 @@
     margin-bottom: 20px;
 
     @media @screen-sm-max {
-      font-size: 32px;
+      font-size: @font-size-h2-small;
     }
   }
 }
