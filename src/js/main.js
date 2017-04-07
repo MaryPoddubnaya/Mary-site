@@ -50,10 +50,10 @@ $(document).ready(function () {
                 navigationPosition: 'right',
                 onLeave: function (index, nextIndex, direction) {
                     if (nextIndex == 2) {
-                        $('.about-section').find('.flex-item:nth-child(1),.flex-item:nth-child(3)').delay(500).animate({
+                        $('.about-section').find('.flex-item:nth-child(1),.flex-item:nth-child(3)').delay(600).animate({
                             opacity: '1'
-                        }, 900, 'easeOutQuint');
-                        $('.flex-item').toggleClass('scale-box');
+                        }, 100, 'easeOutQuint');
+                        $('.flex-item:nth-child(2)').toggleClass('scale-box');
 
                     }
                 }
